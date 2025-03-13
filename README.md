@@ -6,7 +6,6 @@
     - [CSS](#css-1)
     - [Plugins](#plugins-1)
 
-
 ## Descrição Módulo 10
 
 Nesta aula, estamos trabalhando com uma landing page de uma loja de veículos. Vamos baixar plugins e aprender a utilizá-los para a construção de uma galeria de imagens em formato de carrossel e do menu hambúrguer, uma forma de deixar os elementos do menu mais discretos no site.
@@ -29,12 +28,10 @@ Estou adicionando no HTML e CSS somente as mudanças em relação ao código dis
 </div>
 
 <div id="carrossel-imagens">
-        <img src="images/slide1.png" alt="Carro da Porsche">
-        <img src="images/slide2.png" alt="SUV BMW">
-        <img src="images/slide3.png" alt="Ford GT">
-    </div>
-
-
+    <img src="images/slide1.png" alt="Carro da Porsche">
+    <img src="images/slide2.png" alt="SUV BMW">
+    <img src="images/slide3.png" alt="Ford GT">
+</div>
 ```
 
 #### CSS 1
@@ -70,66 +67,59 @@ Já o `nav` seria como se fosse o "neto" do `header`, então essa diferença na 
 
 #### Plugins 1
 
-[Slick Carousel](https://kenwheeler.github.io/slick/)  
+[Slick Carousel](https://kenwheeler.github.io/slick/)
 
-No caso específico do slick ele vai mostrar como podemos importar para a o nosso projeto.  
+No caso específico do Slick, ele mostra como podemos importá-lo para o nosso projeto.
 
-Demo -> Mostra as possibilidades e como vai ficar no nosso projeto
+- **Demo** → Mostra as possibilidades e como vai ficar no nosso projeto.
+- **Usage** → Explica como adicionar ao nosso HTML, CSS e JS.
 
-Usage -> Como vamos adicionar ao nosso HTML, CSS e JS.
+##### 1. Importar a biblioteca jQuery
+```html
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+```
+- Na aula, ele apenas copia o código do site puxando uma versão mais antiga. Preferi utilizar a versão mais recente, pois no site informa que os requisitos mínimos são o jQuery 1.7.
 
-1. Importar a biblioteca jQuery. 
+##### 2. Importação do Slick por uma CDN
+```html
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+```
+- Significa que estamos puxando os arquivos do Slick diretamente da internet, assim como fazemos com uma fonte do Google ou o próprio jQuery.
+- Os benefícios são o tempo de carregamento reduzido; os riscos incluem a possibilidade de os servidores ficarem indisponíveis.
+- Assim como no jQuery, optei por puxar a versão mais recente do Slick.
 
-    ```HTML
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    ```
+##### 3. Adicionando os estilos base do Slick
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+```
+- O primeiro arquivo adiciona o CSS base do Slick.
+- O segundo arquivo adiciona estilos extras, como setas, dots e transições padrão.
 
-    (Na aula ele só copia o código do site puxando uma versão mais antiga, achei melhor puxar a versão mais recente, acredito que não vá ocorrer nenhum problema, já como no site diz que os requisitos mínimos é o jQuery 1.7 )
-
-
-2. Importação do slick por uma CDN
-     ```HTML
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
-    ```
-    (Significa que estamos puxando da internet os arquivos para do slick, assim como puxamos uma fonte do google, da mesma forma que estamos usando o jQuery, os benefícios são tempo de carregamento os perigos são dos servidores ficarem indisponíveis)
-
-    (Da mesma forma que o jQuery pedi para puxar a versão mais recente do slick)
-
-3. Adicionando os estilos base do slick
-    ```HTML
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
-    ```
-
-    (Torcendo para não dar nenhum erro porque to pedindo ajuda do GPT nessa parte para pegar esses comandos de puxar a versão mais recente, qualquer coisa depois mudo aqui o codigo e o README)
-
-    (O primeiro vai adicionar o CSS base do slick, o segundo vai adicionar CSS EXTRA, como setas, dots e transições padrões)
-
-4. Adicionando JS
-    ```HTML
-    <script src="main.js"></script>
-    ```
-
-    ```JS
-    $(document).ready(function(){
-        $('#carrossel-imagens').slick();
-    });
-    ```
-
-     ```JS
-    $(document).ready(function(){
-        $('#carrossel-imagens').slick({
+##### 4. Adicionando JS
+```html
+<script src="main.js"></script>
+```
+```js
+$(document).ready(function(){
+    $('#carrossel-imagens').slick();
+});
+```
+```js
+$(document).ready(function(){
+    $('#carrossel-imagens').slick({
         autoplay: true
-        });
     });
-    ```
+});
+```
 
-    (Na aula ele coloca o JS dentro do HTML direto usando a tag script, mas para ficar mais organizado estou adicionando um arquivo JS separado, acredito que não vai dar problemas.)
+###### 4.1 Organização do código
+- Na aula, o JS é colocado diretamente dentro do HTML usando a tag `<script>`, mas, para manter a organização, preferi adicionar um arquivo JS separado. Acredito que isso não causará problemas.
 
-    (Funcionando até aqui, esse JS criou o carrossel com as 3 imagens que adicionamos via HTML)
+###### 4.2 Funcionamento
+- Até aqui, o JS criou o carrossel com as três imagens que adicionamos via HTML.
+- Essa primeira configuração mantém a versão básica do carrossel, mas podemos personalizá-lo com funções do Slick.
 
-    (Desta primeira forma fica a versão inicial do carrossel, mas é possível chamar funções pelo slick)
-
-    (autoplay(true) -> Adiciona a passagem automática das imagens)
-
-    (Se adicionarmos uma "," podemos colocar mais parametros em seguida.)
+###### 4.3 Personalização
+- `autoplay: true` → Adiciona a transição automática das imagens.
+- Podemos adicionar mais parâmetros separando-os por vírgula `,`.
