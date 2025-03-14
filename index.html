@@ -27,16 +27,16 @@
             <div class="container">
                 <ul>
                     <li>
-                        <a href="#">Sobre</a>
+                        <a href="#sobre-a-loja">Sobre</a>
                     </li>
                     <li>
-                        <a href="#">Em destaque</a>
+                        <a href="#destaque">Em destaque</a>
                     </li>
                     <li>
-                        <a href="#">Promoções</a>
+                        <a href="#promocoes">Promoções</a>
                     </li>
                     <li>
-                        <a href="#">Contato</a>
+                        <a href="#contato">Contato</a>
                     </li>
                 </ul>
             </div>
@@ -64,7 +64,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="destaque">
         <div class="container">
             <h2>Em destaque</h2>
             <ul class="container-flex lista-veiculos">
@@ -117,7 +117,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="promocoes">
         <div class="container">
             <h2>Promoções</h2>
             <ul class="container-flex lista-veiculos">
@@ -174,6 +174,58 @@
             </ul>
         </div>
     </section>
+
+    <section id="Contato">
+        <div class="container">
+            <h2>Entre em contato</h2>
+            <form>
+                <div class="form-campo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome">
+                </div>
+                <div class="form-campo">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone">
+                </div>
+                <div class="form-campo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="form-campo">
+                    <label for="veiculo-interesse">Veiculo de interesse:</label>
+                    <input type="text" id="veiculo-interesse">
+                </div>
+                <div class="form-campo">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea  id="mensagem"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container container-flex">
+            2025&copy; EBAC Motors - Todos os direitos reservados.
+            <ul class="container-flex">
+                <li>
+                    <a href="">
+                        <img src="icones/facebook.png" alt="Facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="icones/instagram.png" alt="Instagram">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="icones/youtube.png" alt="Youtube">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>

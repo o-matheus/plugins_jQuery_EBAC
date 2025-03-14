@@ -203,6 +203,44 @@ $('.menu-hamburguer').click(function(){
 `slideToggle()` -> Faz o elemento aparecer ou desaparecer com um efeito deslizante, dependendo do estado atual do `nav`. 
 
 ### Aula 3
+Fizemos o formulário, rodapé e alteramos o CSS para que o cabeçalho ficasse fixo no topo.
+
+#### HTML
+```html
+<form>
+    <div class="form-campo">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome">
+    </div>
+</form>
+
+<footer>
+    <div class="container container-flex">
+        2025 &copy; EBAC Motors - Todos os direitos reservados.
+    </div>
+</footer>
+```
+`&copy;` -> Adiciona o símbolo de copyright.
+`label` -> Adiciona um rótulo ao campo de entrada e, se estiver associado ao `input`, direciona o foco para o campo ao ser clicado.
+
+#### CSS
+```css
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.form-campo textarea {
+    resize: none;
+    height: 120px;
+}
+```
+Essas configurações fazem com que o cabeçalho fique fixo no topo do site e acompanhe a rolagem da tela.
+
+`resize: none;` -> Impede que o usuário altere manualmente o tamanho do campo de texto.
+
 
 ## Considerações finais
 Acredito que esse README vai ficar muito bom, mas não vou ser detalhado assim nos próximos não, acredito que nem nesse eu vou ser tão detalhado como na aula 1, fica muito grande e muito trabalhoso, vou colocar só os pontos que são novidade para mim, o que acredito que precise de uma explicação mais detalhada para entender melhor o que tá acontecendo no código.
