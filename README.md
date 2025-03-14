@@ -5,6 +5,12 @@
     - [HTML](#html-1)
     - [CSS](#css-1)
     - [Plugins](#plugins-1)
+- [Aula 2](#aula-2)
+    - [HTML](#html-2)
+    - [CSS](#css-2)
+    - [JS](#js-2)
+- [Aula 3](#aula-3)
+- [Considerações Finais](#considerações-finais)
 
 ## Descrição Módulo 10
 
@@ -123,3 +129,81 @@ $(document).ready(function(){
 ###### 4.3 Personalização
 - `autoplay: true` → Adiciona a transição automática das imagens.
 - Podemos adicionar mais parâmetros separando-os por vírgula `,`.
+
+### Aula 2
+O menu hambúrguer ainda não foi aplicado. A construção do código na última aula gerou uma barra de rolagem na página, e aparentemente iremos removê-la.
+
+#### HTML 2
+```html
+<section id="sobre-a-loja">
+    <div class="container container-flex">
+        <img src="images/loja.jpg" alt="Imagem de um estacionamento da loja EBAC Motors">
+        <div>
+            <h2>Sobre a EBAC Motors</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et fugiat, natus amet voluptatum, dignissimos quod illo deserunt iste explicabo aperiam veniam a vitae. Eligendi nulla ducimus, sint veniam provident nobis?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore consequuntur impedit temporibus, et aliquid magnam unde in asperiores nulla, officiis adipisci? Hic labore iste eligendi animi culpa, facilis aspernatur nam!</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Em destaque</h2>
+        <ul class="container-flex lista-veiculos">
+            <li>
+                <img src="images/carro-bmw.png" alt="">
+                <h3>Carro BMW</h3>
+                <p>Câmbio automático, 4 portas, vidros e travas elétricas</p>
+                <div class="price">
+                    <strong>R$ 75.000,00</strong>
+                </div>
+                <button type="button">Tenho interesse</button>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Promoções</h2>
+        <ul class="container-flex lista-veiculos">
+            <li>
+                <img src="images/carro-bmw.png" alt="">
+                <h3>Carro BMW</h3>
+                <p>Câmbio automático, 4 portas, vidros e travas elétricas</p>
+                <div class="price">
+                    <del>R$ 100.000,00</del>
+                    <strong>R$ 75.000,00</strong>
+                </div>
+                <button type="button">Tenho interesse</button>
+            </li>
+        </ul>
+    </div>
+</section>
+```
+`del` -> Deixa o texto riscado, geralmente usado para indicar preços antigos ou valores removidos.
+`strong` -> Deixa o texto em negrito.
+`ctrl + d` -> Permite a alteração de múltiplos elementos no VS Code ao mesmo tempo.
+
+#### CSS 2
+```css
+html {
+    overflow-x: hidden;
+}
+```
+
+`overflow-x: hidden` -> Oculta qualquer conteúdo que ultrapasse o tamanho da tela no eixo horizontal.
+
+#### JS 2
+```js
+$('.menu-hamburguer').click(function(){
+    $('nav').slideToggle();
+});
+```
+`slideToggle()` -> Faz o elemento aparecer ou desaparecer com um efeito deslizante, dependendo do estado atual do `nav`. 
+
+### Aula 3
+
+## Considerações finais
+Acredito que esse README vai ficar muito bom, mas não vou ser detalhado assim nos próximos não, acredito que nem nesse eu vou ser tão detalhado como na aula 1, fica muito grande e muito trabalhoso, vou colocar só os pontos que são novidade para mim, o que acredito que precise de uma explicação mais detalhada para entender melhor o que tá acontecendo no código.
+
