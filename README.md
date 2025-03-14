@@ -10,6 +10,10 @@
     - [CSS](#css-2)
     - [JS](#js-2)
 - [Aula 3](#aula-3)
+    - [HTML](#html-3)
+    - [CSS](#css-3)
+- [Aula 4](#aula-4)
+    - [Plugins](#plugins-4)
 - [Considerações Finais](#considerações-finais)
 
 ## Descrição Módulo 10
@@ -205,7 +209,7 @@ $('.menu-hamburguer').click(function(){
 ### Aula 3
 Fizemos o formulário, rodapé e alteramos o CSS para que o cabeçalho ficasse fixo no topo.
 
-#### HTML
+#### HTML 3
 ```html
 <form>
     <div class="form-campo">
@@ -223,7 +227,7 @@ Fizemos o formulário, rodapé e alteramos o CSS para que o cabeçalho ficasse f
 `&copy;` -> Adiciona o símbolo de copyright.
 `label` -> Adiciona um rótulo ao campo de entrada e, se estiver associado ao `input`, direciona o foco para o campo ao ser clicado.
 
-#### CSS
+#### CSS 3
 ```css
 header {
     position: sticky;
@@ -241,7 +245,86 @@ Essas configurações fazem com que o cabeçalho fique fixo no topo do site e ac
 
 `resize: none;` -> Impede que o usuário altere manualmente o tamanho do campo de texto.
 
+### Aula 4
+Nesta aula, vamos aplicar validações com o jQuery e aprender a usar máscaras em alguns elementos com o jQuery Mask.
+
+#### Plugins 4
+[jQueryMask](https://igorescobar.github.io/jQuery-Mask-Plugin/)
+
+##### 1. Baixando a biblioteca
+- Diferente da outra biblioteca, esta será baixada e adicionada manualmente ao nosso site.
+
+##### 2. Adicionando ao projeto
+- Depois de realizar o download, entramos na pasta `dist`, pegamos o arquivo `js/jquery.mask.min.js` e criamos uma pasta `js` em nosso projeto para adicioná-lo.
+
+##### 3. Adicionando ao HTML
+```html
+<script src="js/jquery.mask.min.js"></script>
+```
+
+##### 4. Adicionando ao JS
+```js
+$('#telefone').mask('(00) 00000-0000');
+```
+- Dessa forma, estamos adicionando uma máscara e validação ao campo telefone.
+
+```js
+$('#dt-nascimento').mask('00/00/0000', {
+    placeholder: '__/__/____' 
+});
+```
+- Neste exemplo, estamos validando a data de nascimento, adicionando uma máscara e definindo um placeholder.
+
+```js
+$('#placa-carro').mask('SSS-0000', {
+    placeholder: 'ABC-1234' 
+});
+```
+- Também é possível misturar diferentes tipos de caracteres na máscara.
+
+---
+
+[jQueryValidation](https://jqueryvalidation.org/)  
+
+Os passos para adicionar esse plugin são os mesmos do Mask, a diferença é que vamos adicionar dois arquivos: um com as validações e outro com as mensagens em português.
+
+Aprendemos também que é possível criar variáveis temporárias no DevTools para trabalhar diretamente no console.
+
+##### 1. Adicionando ao HTML
+```html
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/messages_pt_BR.min.js"></script>
+```
+
+##### 2. Adicionando ao JS
+```js
+$('form').validate({
+    rules: {
+        nome: {
+            required: true
+        },
+        email: {
+            required: true,
+            email: true
+        },
+        telefone: {
+            required: true
+        }
+    },
+    messages: {
+        nome: 'Por favor, insira o seu nome.'
+    }
+});
+```
+- Neste exemplo, mostramos algumas regras de validação e como adicionar uma mensagem específica para quando ocorrer um erro.
+
+- Dando sequência ao código, veremos como interceptar o `submit` quando os valores estão corretos ou incorretos e como aplicar uma função de acordo com cada situação.
+
+
+
 
 ## Considerações finais
 Acredito que esse README vai ficar muito bom, mas não vou ser detalhado assim nos próximos não, acredito que nem nesse eu vou ser tão detalhado como na aula 1, fica muito grande e muito trabalhoso, vou colocar só os pontos que são novidade para mim, o que acredito que precise de uma explicação mais detalhada para entender melhor o que tá acontecendo no código.
+
+O que eu estou percebendo no andamento deste módulo é comoos pluguins facilitam a vida, ansioso para aprender mais!
 
