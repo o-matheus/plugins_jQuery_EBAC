@@ -14,11 +14,12 @@
     - [CSS](#css-3)
 - [Aula 4](#aula-4)
     - [Plugins](#plugins-4)
+- [Aula 5](#aula-5)
 - [Considerações Finais](#considerações-finais)
 
 ## Descrição Módulo 10
 
-Nesta aula, estamos trabalhando com uma landing page de uma loja de veículos. Vamos baixar plugins e aprender a utilizá-los para a construção de uma galeria de imagens em formato de carrossel e do menu hambúrguer, uma forma de deixar os elementos do menu mais discretos no site.
+Nesta aula, estamos trabalhando com uma landing page de uma loja de veículos. Vamos baixar plugins e aprender a utilizá-los para a construção de uma galeria de imagens em formato de carrossel e do menu hambúrguer, uma forma de deixar os elementos do menu mais discretos no site, fazer validação de formulários.
 
 ## Eventos
 
@@ -319,6 +320,29 @@ $('form').validate({
 - Neste exemplo, mostramos algumas regras de validação e como adicionar uma mensagem específica para quando ocorrer um erro.
 
 - Dando sequência ao código, veremos como interceptar o `submit` quando os valores estão corretos ou incorretos e como aplicar uma função de acordo com cada situação.
+
+#### Aula 5
+Nesta aula, fizemos uma função em JS para que, quando alguém clicasse no botão "Tenho interesse" nos carros, a página fosse direcionada à seção de contato, com o campo "Veículo de Interesse" preenchido.
+
+##### JS 5
+```JS
+    $('.lista-veiculos button').click(function() {
+        const destino = $('#contato');
+        const carroInteresse = $(this).parent().find('h3').text();
+
+        $('#veiculoInteresse').val(carroInteresse);
+
+        $('html').animate({
+            scrollTop: destino.offset().top
+        }, 1000);
+    });
+```
+- Definimos uma função com o gatilho `click` para ser executada e vimos como fazer uma comunicação com a tag pai e pegar um elemento específico.
+- `$(this)` é fundamental, pois especifica de forma fácil qual é o container — no caso do exemplo, a lista onde estamos — e pega exatamente o elemento que queremos.
+
+- Na segunda parte, fizemos o processo de animar a página.
+- O `animate` permite "animar" propriedades do CSS. (Não entendi 100%, mas acho que vou pegar depois com mais exemplos.)
+- Agora, essa parte do `scrollTop` eu entendi. Ele, por si só, informa a distância do ponto atual do usuário (o que ele está vendo na página) em relação ao todo. Quando usamos `destino.offset().top`, estamos pedindo para pegar a posição do elemento de destino em relação ao topo. Assim, quando clicamos no elemento solicitado, ele leva o usuário até o "destino".
 
 
 

@@ -41,4 +41,15 @@ $(document).ready(function(){
             }
         }
     })
+
+    $('.lista-veiculos button').click(function() {
+        const destino = $('#contato');
+        const carroInteresse = $(this).parent().find('h3').text()
+
+        $('#veiculoInteresse').val(carroInteresse);
+
+        $('html').animate({
+            scrollTop: destino.offset().top
+        }, 1000)
+    })
 });
