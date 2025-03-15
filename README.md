@@ -15,6 +15,7 @@
 - [Aula 4](#aula-4)
     - [Plugins](#plugins-4)
 - [Aula 5](#aula-5)
+- [Pluguins Recomendados](#recomendações-plugins-ebac)
 - [Considerações Finais](#considerações-finais)
 
 ## Descrição Módulo 10
@@ -344,8 +345,12 @@ Nesta aula, fizemos uma função em JS para que, quando alguém clicasse no bot�
 - O `animate` permite "animar" propriedades do CSS. (Não entendi 100%, mas acho que vou pegar depois com mais exemplos.)
 - Agora, essa parte do `scrollTop` eu entendi. Ele, por si só, informa a distância do ponto atual do usuário (o que ele está vendo na página) em relação ao todo. Quando usamos `destino.offset().top`, estamos pedindo para pegar a posição do elemento de destino em relação ao topo. Assim, quando clicamos no elemento solicitado, ele leva o usuário até o "destino".
 
-
-
+## Recomendações de Plugins EBAC
+- **jQuery UI** -> Adiciona recursos avançados de interação com o usuário.
+- **Magnific Popup** -> Plugin para exibir conteúdo em janelas pop-up.
+- **Full Calendar** -> Permite configurar e interagir com um calendário.
+- **Chosen** -> Melhora a experiência com a seleção de elementos.
+- **DataTables** -> Ajuda na criação de tabelas interativas e responsivas.
 
 ## Considerações finais
 Acredito que esse README vai ficar muito bom, mas não vou ser detalhado assim nos próximos não, acredito que nem nesse eu vou ser tão detalhado como na aula 1, fica muito grande e muito trabalhoso, vou colocar só os pontos que são novidade para mim, o que acredito que precise de uma explicação mais detalhada para entender melhor o que tá acontecendo no código.
